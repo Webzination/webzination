@@ -5,3 +5,8 @@ base:
   lang:     de
   
 
+nav:
+  - title: Home
+    url: /
+  - title: About
+    url: /about

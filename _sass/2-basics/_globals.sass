@@ -1,0 +1,31 @@
+html, body
+	margin: 0
+	padding: 0
+	max-width: 100%
+	height: 100%
+
+html
+	font-size: 10px
+
+body
+	font:
+		size: $f-size
+		weight: $f-weight
+		family: $f-family
+	background: $light
+	color: $secondary
+
+a
+	text-decoration: none
+	color: lighten($primary, 10%)
+
+	&:hover
+		color: $primary
+		text-decoration: none
+
+img
+	max-width: 100%
+	height: auto
+
+*
+	box-sizing: border-box

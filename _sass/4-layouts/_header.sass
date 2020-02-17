@@ -1,0 +1,81 @@
+header
+	position: fixed
+	top: 0
+	left: 0
+	right: 0
+	padding: 1.5rem 0
+	background: $white
+	color: $muted
+	box-shadow: 0px 0px 20px transparentize(black, 0.8)
+
+	.wrapper
+		display: flex
+		align-items: center
+		justify-content: space-between
+
+		#logo
+			font:
+				weight: 700
+				size: 1.4rem
+			text-transform: uppercase
+			letter-spacing: 0.2rem
+			display: flex
+			align-items: center
+			color: $muted
+
+			i
+				display: inline-block
+				font-size: 2rem
+				line-height: 1
+				margin-right: 0.5rem
+				padding: 0
+
+			&:hover
+				color: $secondary
+
+				i
+					color: $primary
+
+		#navicon
+			cursor: pointer
+			font-size: 3.5rem
+
+			&:hover
+				color: $primary
+		
+		#navigation
+			display: none
+			list-style: none
+			margin: 0
+			padding: 0
+			font-size: 1.4rem
+
+			li
+				display: inline-block
+				margin-right: 2rem
+
+				&:last-child
+					margin-right: 0
+
+				a
+					color: $muted
+					text-transform: uppercase
+					font:
+						weight: 700
+
+					&::before
+						content: "//"
+						margin-right: 0.5rem
+						font-size: 1.2rem
+
+					&:hover
+						color: $primary
+
+						&::before
+							color: $secondary
+
+		@media screen and (min-width: 768px)
+			#navicon
+				display: none
+			#navigation
+				display: block

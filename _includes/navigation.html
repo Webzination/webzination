@@ -1,0 +1,5 @@
+<ul id="navigation">
+	{% for i in site.data.config.nav %}
+		<li><a href="{{ i.url }}">{{ i.title }}</a></li>
+	{% endfor %}
+</ul>
