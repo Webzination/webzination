@@ -6,6 +6,7 @@ html, body
 
 html
 	font-size: 10px
+	overflow-x: hidden
 
 body
 	font:
@@ -29,3 +30,25 @@ img
 
 *
 	box-sizing: border-box
+
+section
+	padding: 10rem 0
+
+
+h2
+
+	&.section-title
+		text:
+			align: center
+			transform: uppercase
+		color: $primary
+		font-size: 2rem
+		letter-spacing: 0.2rem
+
+		&::after
+			display: block
+			content: ""
+			width: 4rem
+			height: 0.5rem
+			background: $primary
+			margin: 3rem auto

@@ -1,0 +1,40 @@
+.button
+	display: block
+	padding: 1rem 2.5rem
+	text:
+		align: center
+		transform: uppercase
+	font:
+		size: 1.4rem
+		weight: 700
+	letter-spacing: 0.2rem
+	margin-bottom: 2rem
+
+	&:last-child
+		margin-bottom: 0
+
+	&.primary
+		background: transparentize($white, 0.7)
+		color: $white
+		border: 1px solid $white
+
+		&:hover
+			background: $white
+			color: $primary
+			border-color: $primary
+		
+	&.secondary
+		color: $muted
+		border: 1px solid $muted
+
+		&:hover
+			color: $secondary
+			border-color: $secondary
+
+	@media screen and (min-width: 550px)
+		display: inline-block
+
+		margin-right: 2rem
+
+		&:last-child
+			margin-right: 0
