@@ -3,6 +3,7 @@ base:
   owner:    Daniel Cunningham
   charset:  UTF-8
   lang:     de
+  email:    dcunningham90@online.de
   
 
 nav:
@@ -10,3 +11,7 @@ nav:
     url: /
   - title: About
     url: /about
+  - title: Projekte
+    url: /works
+  - title: Kontakt
+    url: /contact
