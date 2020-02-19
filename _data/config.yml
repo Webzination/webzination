@@ -11,6 +11,8 @@ nav:
     url: /
   - title: About
     url: /about
+  - title: Blog
+    url: /blog
   - title: Projekte
     url: /works
   - title: Kontakt
