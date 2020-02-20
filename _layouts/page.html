@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<section id="page">
+<section {% if page.subclass %}class="{{page.subclass}}"{% endif %} id="page">
 	<div class="wrapper">
 		<article class="content">
 			<h2 class="page-title">{{ page.title }}</h2>

@@ -2,8 +2,10 @@
 layout: page
 permalink: /about
 title: About Me
+subclass: about
 ---
 
+![Avatar]({{ site.baseurl }}/assets/img/avatar.jpg)
 
 Mein Name ist Daniel Cunningham, 30 Jahre jung und seit 2003 leidenschaftlicher Webdesigner und nebenbei im Online-Marketing tätig. In diesem Gebiet bin ich ein ungelernter und habe alles Wissen welches ich besitze mir selbst durch das __learning-by-doing__ Verfahren selbst gelehrt. Mit Hilfe der Video-Plattform [YouTube](http://youtube.de/) und der dort aktiven Webdesignern konnte ich die dort gelehrte Theorie in die Praxis umsetzen und für meine Bedürfnisse optimieren.
 
