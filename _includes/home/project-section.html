@@ -15,7 +15,7 @@
 
 				<ul class="project-list">
 
-					{% for work in site.posts %}
+					{% for work in site.posts limit: 5 %}
 						{% if work.type == "work" %}
 							<li class="project">
 								<img src="{% if work.image %}{{ site.baseurl }}{{ work.image }}{% else %}http://placehold.it/800x600{% endif %}" alt="">

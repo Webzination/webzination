@@ -15,7 +15,7 @@
 
 				<ul class="post-list">
 
-					{% for post in site.posts %}
+					{% for post in site.posts limit: 5 %}
 						{% if post.type == "post" %}
 						<li class="post">
 							<h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
