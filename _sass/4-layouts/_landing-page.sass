@@ -1,11 +1,17 @@
 #landing-page
 	width: 100%
 	height: calc(100vh - 5rem)
-	background: $secondary
+	background: 
+		image: url('../img/home-bg.jpg')
+		size: cover
+		repeat: no-repeat
 	color: $light
 	display: flex
 	align-items: center
 	justify-content: stretch
+
+	@media screen and (min-width: 768px)
+		background-attachment: fixed
 
 	.wrapper
 		display: flex
