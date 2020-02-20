@@ -3,3 +3,28 @@ layout: page
 permalink: /blog
 title: Mein Blog
 ---
+
+{% assign counter = 0 %}
+{% for work in site.posts %}
+	{% if work.type == "post" %}
+		{% assign counter = counter | plus: 1 %}
+	{% endif %}
+{% endfor %}
+
+
+{% if counter != 0 %}
+
+	<ul class="post-list">
+
+		{% for post in site.posts %}
+			{% if post.type == "post" %}
+			<li class="post">
+				<h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+				<span>Geschrieben am {{ post.date | date: "%d.%m.%Y" }} {% if post.categories %}in <u>{{ post.categories }}</u> {% endif %}</span>
+			</li>
+			{% endif %}
+		{% endfor %}
+	</ul>
+{% else %}
+	<p><center><i>Es sind leider noch keine Posts vorhanden.</i></center></p>
+{% endif %}

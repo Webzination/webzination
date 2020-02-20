@@ -5,9 +5,42 @@ title: Meine Projekte
 ---
 
 <p>
-	Brunch craft beer intelligentsia celiac humblebrag single-origin coffee iPhone yuccie williamsburg tilde. Hexagon kickstarter hell of, yuccie tilde kombucha taxidermy kogi succulents. Cloud bread typewriter schlitz, helvetica woke echo park synth offal. Edison bulb ethical vegan, pitchfork vice master cleanse tumeric viral 90's live-edge. Sustainable street art shoreditch beard tacos 8-bit art party. Tousled lo-fi kitsch asymmetrical DIY.
+	Die hier präsentierten Projekte sind sämtliche Webseiten die ich zwecks Marketing erstellt habe oder diverse Kleinprojekte an denen Ihr als Besucher
+	profitieren könnt. Die meisten Projekte werden im Blog gesondert nochmal vorgestellt und beschrieben.
 </p>
 
 <p>
-	Yr pour-over hella salvia fanny pack, ramps 8-bit sustainable you probably haven't heard of them blog organic aesthetic food truck sartorial bushwick. Woke vape polaroid gluten-free, scenester hot chicken raw denim pug craft beer taiyaki hexagon farm-to-table twee. VHS hell of sriracha, lo-fi meditation bushwick godard. Kickstarter authentic 90's hella occupy, roof party cliche adaptogen vaporware mumblecore retro.
+	<i>
+		Achtet bei den Projekten auf die Kategorien im Overlay.
+	</i>
 </p>
+
+
+{% assign counter = 0 %}
+{% for work in site.posts %}
+	{% if work.type == "work" %}
+		{% assign counter = counter | plus: 1 %}
+	{% endif %}
+{% endfor %}
+
+
+{% if counter != 0 %}
+
+	<ul class="project-list">
+
+		{% for work in site.posts %}
+			{% if work.type == "work" %}
+				<li class="project">
+					<img src="{% if work.image %}{{ site.baseurl }}{{ work.image }}{% else %}http://placehold.it/800x600{% endif %}" alt="">
+					<div class="project-overlay">
+						<h3>{{ work.title }}</h3>
+						<span>{{ work.categories }}</span>
+						<a href="{{ work.url }}" class="button secondary">Details</a>
+					</div>
+				</li>
+			{% endif %}
+		{% endfor %}
+	</ul>
+{% else %}
+	<p><center><i>Es sind leider noch keine Projekte vorhanden.</i></center></p>
+{% endif %}

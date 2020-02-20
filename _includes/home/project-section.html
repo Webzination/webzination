@@ -3,79 +3,34 @@
 		<article>
 			<h2 class="section-title">Meine Projekte</h2>
 
-			<ul class="project-list">
-				<li class="project">
-					<img src="http://placehold.it/800x600" alt="">
+			{% assign post-counter = 0 %}
+			{% for work in site.posts %}
+				{% if work.type == "work" %}
+					{% assign post-counter = post-counter | plus: 1 %}
+				{% endif %}
+			{% endfor %}
 
-					<div class="project-overlay">
-						<h3>Projekttitel</h3>
-						<span>Affiliate Marketing</span>
-						<p>
-							<a href="/" class="button secondary">Details</a>
-						</p>
-					</div>
-				</li>
 
-				<li class="project">
-					<img src="http://placehold.it/800x600" alt="">
+			{% if post-counter != 0 %}
 
-					<div class="project-overlay">
-						<h3>Projekttitel</h3>
-						<span>Affiliate Marketing</span>
-						<p>
-							<a href="/" class="button secondary">Details</a>
-						</p>
-					</div>
-				</li>
+				<ul class="project-list">
 
-				<li class="project">
-					<img src="http://placehold.it/800x600" alt="">
-
-					<div class="project-overlay">
-						<h3>Projekttitel</h3>
-						<span>Affiliate Marketing</span>
-						<p>
-							<a href="/" class="button secondary">Details</a>
-						</p>
-					</div>
-				</li>
-
-				<li class="project">
-					<img src="http://placehold.it/800x600" alt="">
-
-					<div class="project-overlay">
-						<h3>Projekttitel</h3>
-						<span>Affiliate Marketing</span>
-						<p>
-							<a href="/" class="button secondary">Details</a>
-						</p>
-					</div>
-				</li>
-
-				<li class="project">
-					<img src="http://placehold.it/800x600" alt="">
-
-					<div class="project-overlay">
-						<h3>Projekttitel</h3>
-						<span>Affiliate Marketing</span>
-						<p>
-							<a href="/" class="button secondary">Details</a>
-						</p>
-					</div>
-				</li>
-
-				<li class="project">
-					<img src="http://placehold.it/800x600" alt="">
-
-					<div class="project-overlay">
-						<h3>Projekttitel</h3>
-						<span>Affiliate Marketing</span>
-						<p>
-							<a href="/" class="button secondary">Details</a>
-						</p>
-					</div>
-				</li>
-			</ul>
+					{% for work in site.posts %}
+						{% if work.type == "work" %}
+							<li class="project">
+								<img src="{% if work.image %}{{ site.baseurl }}{{ work.image }}{% else %}http://placehold.it/800x600{% endif %}" alt="">
+								<div class="project-overlay">
+									<h3>{{ work.title }}</h3>
+									<span>{{ work.categories }}</span>
+									<a href="{{ work.url }}" class="button secondary">Details</a>
+								</div>
+							</li>
+						{% endif %}
+					{% endfor %}
+				</ul>
+			{% else %}
+				<p><center><i>Es sind leider noch keine Projekte vorhanden.</i></center></p>
+			{% endif %}
 			<p>
 				<a href="/works" class="button primary">Alle Projekte anzeigen</a>
 			</p>

@@ -3,32 +3,30 @@
 		<article>
 			<h2 class="section-title">Meine Posts</h2>
 
-			<ul class="post-list">
-				<li class="post">
-					<h3><a href="/">Dies ist der Titel eines Posts</a></h3>
-					<span>Geschrieben am 17.02.2020 in <u>Webdesign</u></span>
-				</li>
+			{% assign work-counter = 0 %}
+			{% for work in site.posts %}
+				{% if work.type == "post" %}
+					{% assign work-counter = work-counter | plus: 1 %}
+				{% endif %}
+			{% endfor %}
 
-				<li class="post">
-					<h3><a href="/">Dies ist der Titel eines Posts</a></h3>
-					<span>Geschrieben am 17.02.2020 in <u>Webdesign</u></span>
-				</li>
 
-				<li class="post">
-					<h3><a href="/">Dies ist der Titel eines Posts</a></h3>
-					<span>Geschrieben am 17.02.2020 in <u>Webdesign</u></span>
-				</li>
+			{% if work-counter != 0 %}
 
-				<li class="post">
-					<h3><a href="/">Dies ist der Titel eines Posts</a></h3>
-					<span>Geschrieben am 17.02.2020 in <u>Webdesign</u></span>
-				</li>
+				<ul class="post-list">
 
-				<li class="post">
-					<h3><a href="/">Dies ist der Titel eines Posts</a></h3>
-					<span>Geschrieben am 17.02.2020 in <u>Webdesign</u></span>
-				</li>
-			</ul>
+					{% for post in site.posts %}
+						{% if post.type == "post" %}
+						<li class="post">
+							<h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+							<span>Geschrieben am {{ post.date | date: "%d.%m.%Y" }} {% if post.categories %}in <u>{{ post.categories }}</u> {% endif %}</span>
+						</li>
+						{% endif %}
+					{% endfor %}
+				</ul>
+			{% else %}
+				<p><center><i>Es sind leider noch keine Posts vorhanden.</i></center></p>
+			{% endif %}
 
 			<p>
 				<a href="/blog" class="button secondary">Alle Beiträge anzeigen</a>
